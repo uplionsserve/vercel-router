@@ -2,11 +2,11 @@
 	"rewrites": [
 		{
 			"source": "/",
-			"dest": "https://uplionsserve.vercel.app/"
+			"destination": "https://uplionsserve.vercel.app/"
 		},
 		{
 			"source": "/:match*",
-			"dest": "https://uplionsserve.vercel.app/:match*"
+			"destination": "https://uplionsserve.vercel.app/:match*"
 		}
 	]
 }
