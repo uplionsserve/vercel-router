@@ -2,11 +2,11 @@
 	"rewrites": [
 		{
 			"source": "/childhood-cancer/",
-			"destination": "https://uplionsserve-cc.vercel.app/"
+			"destination": "https://uplionsserve-cc.vercel.app/childhood-cancer/"
 		},
 		{
 			"source": "/childhood-cancer/:match*",
-			"destination": "https://uplionsserve-cc.vercel.app/:match*"
+			"destination": "https://uplionsserve-cc.vercel.app/childhood-cancer/:match*"
 		},
 		{
 			"source": "/",
