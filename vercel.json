@@ -9,6 +9,14 @@
 			"destination": "https://uplionsserve-cc.vercel.app/childhood-cancer/:match*"
 		},
 		{
+			"source": "/hunger/",
+			"destination": "https://uplionsserve-cc.vercel.app/hunger/"
+		},
+		{
+			"source": "/hunger/:match*",
+			"destination": "https://uplionsserve-cc.vercel.app/hunger/:match*"
+		},
+		{
 			"source": "/",
 			"destination": "https://uplionsserve.vercel.app/"
 		},
