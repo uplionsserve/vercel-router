@@ -1,13 +1,13 @@
 import { GlobalConfig } from "payload/types"
 
 const Home: GlobalConfig = {
-	slug: "hunger_home",
+	slug: "hunger-pages-home",
 	label: "Home",
+	admin: {
+		group: "Hunger Pages",
+	},
 	access: {
 		read: () => true,
-	},
-	admin: {
-		group: "Hunger",
 	},
 	fields: [
 		{
