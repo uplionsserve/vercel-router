@@ -39,8 +39,8 @@ export default buildConfig({
 		],
 	}),
 
-	collections: [Users, Media, hunger.collections.Programs],
-	globals: [hunger.pages.Home],
+	collections: [Users, Media, ...hunger.collections],
+	globals: [...hunger.pages],
 
 	typescript: {
 		outputFile: path.resolve(__dirname, "payload-types.ts"),
