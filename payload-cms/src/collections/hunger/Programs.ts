@@ -1,10 +1,15 @@
 import { CollectionConfig } from "payload/types"
 import { toKebabCase } from "../helpers"
+import { lexicalHTML } from "@payloadcms/richtext-lexical"
 
 const Programs: CollectionConfig = {
-	slug: "programs",
+	slug: "hunger-data-programs",
+	labels: {
+		singular: "Program",
+		plural: "Programs",
+	},
 	admin: {
-		group: "Hunger",
+		group: "Hunger Data",
 	},
 	access: {
 		read: () => true,
@@ -35,6 +40,7 @@ const Programs: CollectionConfig = {
 			type: "richText",
 			required: true,
 		},
+		lexicalHTML("description", { name: "description_html" }),
 	],
 }
 
