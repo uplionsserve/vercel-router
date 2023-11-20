@@ -39,7 +39,7 @@ export default buildConfig({
 		],
 	}),
 
-	collections: [Users, Media, ...hunger.collections],
+	collections: [Users, ...hunger.collections],
 	globals: [...hunger.pages],
 
 	typescript: {
