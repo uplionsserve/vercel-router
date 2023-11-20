@@ -35,12 +35,12 @@ export default buildConfig({
 		features: ({ defaultFeatures }) => [
 			...defaultFeatures,
 			// The HTMLConverter Feature is the feature which manages the HTML serializers. If you do not pass any arguments to it, it will use the default serializers.
-			HTMLConverterFeature({}),
+			HTMLConverterFeature(),
 		],
 	}),
 
 	collections: [Users, Media, hunger.collections.Programs],
-	globals: [cc.Home, hunger.pages.Home],
+	globals: [hunger.pages.Home],
 
 	typescript: {
 		outputFile: path.resolve(__dirname, "payload-types.ts"),
