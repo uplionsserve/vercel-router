@@ -2,7 +2,10 @@ import path from "path"
 
 import { postgresAdapter } from "@payloadcms/db-postgres"
 import { webpackBundler } from "@payloadcms/bundler-webpack"
-import { lexicalEditor } from "@payloadcms/richtext-lexical"
+import {
+	HTMLConverterFeature,
+	lexicalEditor,
+} from "@payloadcms/richtext-lexical"
 import { buildConfig } from "payload/config"
 
 /* App-wide */
@@ -28,9 +31,15 @@ export default buildConfig({
 		},
 	}),
 
-	editor: lexicalEditor({}),
+	editor: lexicalEditor({
+		features: ({ defaultFeatures }) => [
+			...defaultFeatures,
+			// The HTMLConverter Feature is the feature which manages the HTML serializers. If you do not pass any arguments to it, it will use the default serializers.
+			HTMLConverterFeature({}),
+		],
+	}),
 
-	collections: [Users, Media],
+	collections: [Users, Media, hunger.collections.Programs],
 	globals: [cc.Home, hunger.pages.Home],
 
 	typescript: {
