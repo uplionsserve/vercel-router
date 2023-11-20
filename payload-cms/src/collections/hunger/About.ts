@@ -1,6 +1,7 @@
 import { GlobalConfig } from "payload/types"
+import { lexicalHTML } from "@payloadcms/richtext-lexical"
 
-const Home: GlobalConfig = {
+const About: GlobalConfig = {
 	slug: "hunger-pages-about",
 	label: "About",
 	admin: {
@@ -20,7 +21,9 @@ const Home: GlobalConfig = {
 			label: "Vision Statement",
 			type: "richText",
 		},
+		lexicalHTML("mission_statement", { name: "mission_statement_html" }),
+		lexicalHTML("vision_statement", { name: "vision_statement_html" }),
 	],
 }
 
-export default Home
+export default About
