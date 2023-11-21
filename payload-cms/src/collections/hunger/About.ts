@@ -17,6 +17,21 @@ const About: GlobalConfig = {
 			type: "richText",
 		},
 		{
+			name: "mission_cta_button",
+			label: "Mission Call To Action Button",
+			type: "group",
+			fields: [
+				{
+					name: "text",
+					type: "text",
+				},
+				{
+					name: "url",
+					type: "text",
+				},
+			],
+		},
+		{
 			name: "vision_statement",
 			label: "Vision Statement",
 			type: "richText",
