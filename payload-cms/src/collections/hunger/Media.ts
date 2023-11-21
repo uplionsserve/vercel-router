@@ -19,6 +19,7 @@ const Media: CollectionConfig = {
 		},
 	],
 	upload: {
+		staticDir: process.env.MEDIA_DIR || undefined,
 		mimeTypes: ["image/*", "application/pdf"],
 		imageSizes: [
 			{
