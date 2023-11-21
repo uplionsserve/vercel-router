@@ -17,6 +17,7 @@ import cc from "./collections/childhood-cancer/pages"
 import hunger from "./collections/hunger"
 
 export default buildConfig({
+	serverURL: process.env.SERVER_URL || "http://localhost:3000",
 	admin: {
 		user: Users.slug,
 		bundler: webpackBundler(),
