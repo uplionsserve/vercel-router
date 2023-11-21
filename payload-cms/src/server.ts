@@ -8,6 +8,10 @@ const port = (process.env.PORT as unknown as number) || 3000
 const host = process.env.HOST || "localhost"
 
 const start = async () => {
+	app.get("/", (_, res) => {
+		res.redirect("/admin")
+	})
+
 	// Initialize Payload
 	await payload.init({
 		secret: process.env.PAYLOAD_SECRET,
