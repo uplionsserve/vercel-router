@@ -10,7 +10,6 @@ import { buildConfig } from "payload/config"
 
 /* App-wide */
 import Users from "./collections/Users"
-import Media from "./collections/Media"
 
 import cc from "./collections/childhood-cancer/pages"
 
