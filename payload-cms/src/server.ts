@@ -9,7 +9,7 @@ const host = process.env.HOST || "localhost"
 
 const start = async () => {
 	app.get("/", (_, res) => {
-		res.redirect("/admin")
+		res.redirect(process.env.SERVER_URL || "/admin")
 	})
 
 	// Initialize Payload
