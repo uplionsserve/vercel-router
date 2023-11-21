@@ -1,6 +1,14 @@
 {
 	"rewrites": [
 		{
+			"source": "/admin/",
+			"destination": "https://api.uplionsserve.org/admin/"
+		},
+		{
+			"source": "/admin/:match*",
+			"destination": "https://api.uplionsserve.org/admin/:match*"
+		},
+		{
 			"source": "/childhood-cancer/",
 			"destination": "https://uplionsserve-cc.vercel.app/childhood-cancer/"
 		},
