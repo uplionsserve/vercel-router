@@ -32,6 +32,7 @@ const Media: CollectionConfig = {
 				width: 512,
 				height: 512,
 				position: "centre",
+				withoutEnlargement: false,
 			},
 		],
 	},
