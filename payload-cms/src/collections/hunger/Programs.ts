@@ -59,17 +59,6 @@ const Programs: CollectionConfig = {
 					name: "url",
 					type: "text",
 				},
-				{
-					name: "full_url",
-					type: "text",
-					hidden: true,
-					hooks: {
-						afterRead: [
-							({ data }) =>
-								`http://localhost:3000${data.cta_button.url}`,
-						],
-					},
-				},
 			],
 		},
 		lexicalHTML("description", { name: "description_html" }),
