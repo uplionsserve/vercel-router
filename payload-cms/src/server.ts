@@ -4,6 +4,9 @@ import payload from "payload"
 require("dotenv").config()
 const app = express()
 
+const port = process.env.PORT || 3000
+const host = process.env.HOST || "localhost"
+
 const start = async () => {
 	// Initialize Payload
 	await payload.init({
@@ -16,7 +19,7 @@ const start = async () => {
 
 	// Add your own express routes here
 
-	app.listen(3000)
+	app.listen(port, host, () => {})
 }
 
 start()
