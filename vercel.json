@@ -21,11 +21,7 @@
 			"destination": "https://uplionsserve.vercel.app/"
 		},
 		{
-			"source": "/google",
-			"destination": "https://google.com/"
-		},
-		{
-			"source": "/:match*",
+			"source": "/:match((?!admin).*)",
 			"destination": "https://uplionsserve.vercel.app/:match*"
 		}
 	]
