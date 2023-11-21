@@ -21,8 +21,8 @@
 			"destination": "https://uplionsserve.vercel.app/"
 		},
 		{
-			"source": "/:match((?!admin).*)",
-			"destination": "https://uplionsserve.vercel.app/:match*"
+			"source": "/:path((?!admin/).*)",
+			"destination": "https://uplionsserve.vercel.app/:path*"
 		}
 	]
 }
