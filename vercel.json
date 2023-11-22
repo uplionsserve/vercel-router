@@ -18,11 +18,11 @@
 		},
 		{
 			"source": "/hunger/",
-			"destination": "https://uplionsserve-hunger.vercel.app/hunger/"
+			"destination": "https://uplionsserve-hunger.vercel.app/"
 		},
 		{
 			"source": "/hunger/:match*",
-			"destination": "https://uplionsserve-hunger.vercel.app/hunger/:match*"
+			"destination": "https://uplionsserve-hunger.vercel.app/:match*"
 		},
 		{
 			"source": "/",
