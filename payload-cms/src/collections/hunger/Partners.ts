@@ -1,4 +1,5 @@
 import { CollectionConfig } from "payload/types"
+import { triggerHungerRegeneration } from "../../helpers"
 
 const Programs: CollectionConfig = {
 	slug: "hunger-data-partners",
@@ -31,6 +32,9 @@ const Programs: CollectionConfig = {
 			type: "text",
 		},
 	],
+	hooks: {
+		afterChange: [() => triggerHungerRegeneration()],
+	},
 }
 
 export default Programs

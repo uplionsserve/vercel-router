@@ -1,4 +1,5 @@
 import { CollectionConfig } from "payload/types"
+import { triggerHungerRegeneration } from "../../helpers"
 
 const Media: CollectionConfig = {
 	slug: "hunger-data-media",
@@ -36,6 +37,9 @@ const Media: CollectionConfig = {
 				withoutEnlargement: false,
 			},
 		],
+	},
+	hooks: {
+		afterChange: [() => triggerHungerRegeneration()],
 	},
 }
 

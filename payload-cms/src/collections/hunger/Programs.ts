@@ -1,6 +1,7 @@
 import { CollectionConfig } from "payload/types"
 import { toKebabCase } from "../helpers"
 import { lexicalHTML } from "@payloadcms/richtext-lexical"
+import { triggerHungerRegeneration } from "../../helpers"
 
 const Programs: CollectionConfig = {
 	slug: "hunger-data-programs",
@@ -63,6 +64,9 @@ const Programs: CollectionConfig = {
 		},
 		lexicalHTML("description", { name: "description_html" }),
 	],
+	hooks: {
+		afterChange: [() => triggerHungerRegeneration()],
+	},
 }
 
 export default Programs

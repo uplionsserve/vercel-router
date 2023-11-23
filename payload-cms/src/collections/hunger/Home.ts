@@ -1,4 +1,5 @@
 import { GlobalConfig } from "payload/types"
+import { triggerHungerRegeneration } from "../../helpers"
 
 const Home: GlobalConfig = {
 	slug: "hunger-pages-home",
@@ -16,6 +17,9 @@ const Home: GlobalConfig = {
 			required: true,
 		},
 	],
+	hooks: {
+		afterChange: [() => triggerHungerRegeneration()],
+	},
 }
 
 export default Home

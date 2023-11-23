@@ -1,5 +1,6 @@
 import { GlobalConfig } from "payload/types"
 import { lexicalHTML } from "@payloadcms/richtext-lexical"
+import { triggerHungerRegeneration } from "../../helpers"
 
 const About: GlobalConfig = {
 	slug: "hunger-pages-about",
@@ -39,6 +40,9 @@ const About: GlobalConfig = {
 		lexicalHTML("mission_statement", { name: "mission_statement_html" }),
 		lexicalHTML("vision_statement", { name: "vision_statement_html" }),
 	],
+	hooks: {
+		afterChange: [() => triggerHungerRegeneration()],
+	},
 }
 
 export default About
