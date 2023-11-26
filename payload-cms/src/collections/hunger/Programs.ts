@@ -62,6 +62,30 @@ const Programs: CollectionConfig = {
 				},
 			],
 		},
+		{
+			name: "gallery_images",
+			label: "Gallery Images",
+			labels: {
+				singular: "image",
+				plural: "images",
+			},
+			type: "array",
+			fields: [
+				{
+					name: "image",
+					type: "upload",
+					relationTo: "hunger-data-media",
+					filterOptions: {
+						mimeType: { contains: "image" },
+					},
+					required: true,
+				},
+				{
+					name: "caption",
+					type: "text",
+				},
+			],
+		},
 		lexicalHTML("description", { name: "description_html" }),
 	],
 	hooks: {
