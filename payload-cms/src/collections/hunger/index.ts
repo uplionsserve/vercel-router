@@ -19,7 +19,7 @@ HungerData.pages = HungerData.pages.map((page) => ({
 		hideAPIURL: true,
 	},
 	access: {
-		read: () => true,
+		read: ({ req: { user } }) => hasAccess(user, "Hunger"),
 		update: ({ req: { user } }) => hasAccess(user, "Hunger"),
 	},
 }))
@@ -32,7 +32,7 @@ HungerData.collections = HungerData.collections.map((collection) => ({
 		hideAPIURL: true,
 	},
 	access: {
-		read: () => true,
+		read: ({ req: { user } }) => hasAccess(user, "Hunger"),
 		update: ({ req: { user } }) => hasAccess(user, "Hunger"),
 	},
 }))
