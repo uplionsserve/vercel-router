@@ -9,11 +9,11 @@ import {
 import { buildConfig } from "payload/config"
 
 /* App-wide */
+import { Icon, Logo } from "./components/Icon"
 import Users from "./collections/Users"
+import Keys from "./collections/Keys"
 
 import cc from "./collections/childhood-cancer/pages"
-
-/* Hunger */
 import hunger from "./collections/hunger"
 
 export default buildConfig({
@@ -21,6 +21,13 @@ export default buildConfig({
 	admin: {
 		user: Users.slug,
 		bundler: webpackBundler(),
+		meta: {
+			titleSuffix: "- U.P. Lions Serve CMS",
+			favicon: "/assets/icon-circle.png",
+		},
+		components: {
+			graphics: { Icon, Logo },
+		},
 	},
 	db: postgresAdapter({
 		pool: {
@@ -39,7 +46,7 @@ export default buildConfig({
 		],
 	}),
 
-	collections: [Users, ...hunger.collections],
+	collections: [Users, Keys, ...hunger.collections],
 	globals: [...hunger.pages],
 
 	typescript: {
