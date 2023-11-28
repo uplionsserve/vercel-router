@@ -23,6 +23,14 @@ const Keys: CollectionConfig = {
 			type: "text",
 			required: true,
 		},
+		{
+			name: "website_access",
+			label: "Website Access",
+			type: "select",
+			hasMany: true,
+			options: ["U.P. Lions Serve", "Childhood Cancer", "Hunger"],
+			required: true,
+		},
 	],
 }
 
