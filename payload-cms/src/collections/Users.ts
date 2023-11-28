@@ -5,6 +5,8 @@ const Users: CollectionConfig = {
 	slug: "users",
 	admin: {
 		useAsTitle: "name.full",
+		hidden: ({ user }) => !isAdmin(user),
+		group: "Administration",
 	},
 	auth: true,
 	access: {

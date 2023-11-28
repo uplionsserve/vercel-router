@@ -8,9 +8,6 @@ const About: GlobalConfig = {
 	admin: {
 		group: "Hunger Pages",
 	},
-	access: {
-		read: () => true,
-	},
 	fields: [
 		{
 			name: "mission_statement",
@@ -41,7 +38,7 @@ const About: GlobalConfig = {
 		lexicalHTML("vision_statement", { name: "vision_statement_html" }),
 	],
 	hooks: {
-		afterChange: [() => triggerHungerRegeneration()],
+		afterChange: [triggerHungerRegeneration],
 	},
 }
 
