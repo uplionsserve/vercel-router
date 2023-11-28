@@ -11,9 +11,9 @@ const Programs: CollectionConfig = {
 	},
 	admin: {
 		group: "Hunger Data",
-	},
-	access: {
-		read: () => true,
+		useAsTitle: "title",
+		description:
+			"Programs that are offered or endorsed by the Hunger program displayed on the Home and Programs pages.",
 	},
 	defaultSort: "id",
 	fields: [
