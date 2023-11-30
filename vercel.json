@@ -11,7 +11,7 @@
 			"permanent": true
 		},
 		{
-			"source": "/(cc)|(childhoodcancer)/:match*",
+			"source": "/((cc)|(childhoodcancer))/:match*",
 			"destination": "https://uplionsserve.org/childhood-cancer/:match*",
 			"permanent": true
 		},
