@@ -4,16 +4,44 @@
 			"source": "/admin",
 			"destination": "https://api.uplionsserve.org/admin",
 			"permanent": false
+		},
+		{
+			"source": "/((cc)|(childhoodcancer))",
+			"destination": "https://uplionsserve.org/childhood-cancer",
+			"permanent": true
+		},
+		{
+			"source": "/(cc)|(childhoodcancer)/:match*",
+			"destination": "https://uplionsserve.org/childhood-cancer/:match*",
+			"permanent": true
+		},
+		{
+			"source": "/((dad)|(defenseagainstdiabetes))",
+			"destination": "https://uplionsserve-dad.vercel.app/defense-against-diabetes",
+			"permanent": true
+		},
+		{
+			"source": "/((dad)|(defenseagainstdiabetes))/:match*",
+			"destination": "https://uplionsserve-dad.vercel.app/defense-against-diabetes/:match*",
+			"permanent": true
 		}
 	],
 	"rewrites": [
 		{
-			"source": "/childhood-cancer/",
-			"destination": "https://uplionsserve-cc.vercel.app/childhood-cancer/"
+			"source": "/childhood-cancer",
+			"destination": "https://uplionsserve-cc.vercel.app/childhood-cancer"
 		},
 		{
 			"source": "/childhood-cancer/:match*",
 			"destination": "https://uplionsserve-cc.vercel.app/childhood-cancer/:match*"
+		},
+		{
+			"source": "/defense-against-diabetes",
+			"destination": "https://uplionsserve-dad.vercel.app/defense-against-diabetes"
+		},
+		{
+			"source": "/defense-against-diabetes/:match*",
+			"destination": "https://uplionsserve-dad.vercel.app/defense-against-diabetes/:match*"
 		},
 		{
 			"source": "/hunger/",
