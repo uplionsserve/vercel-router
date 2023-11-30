@@ -24,6 +24,16 @@
 			"source": "/(dad|defenseagainstdiabetes)/:match*",
 			"destination": "https://uplionsserve.org/defense-against-diabetes/:match*",
 			"permanent": true
+		},
+		{
+			"source": "/hunger/",
+			"destination": "https://uplionsserve.org",
+			"permanent": false
+		},
+		{
+			"source": "/hunger/:match*",
+			"destination": "https://uplionsserve.org",
+			"permanent": false
 		}
 	],
 	"rewrites": [
@@ -43,14 +53,7 @@
 			"source": "/defense-against-diabetes/:match*",
 			"destination": "https://uplionsserve-dad.vercel.app/defense-against-diabetes/:match*"
 		},
-		{
-			"source": "/hunger/",
-			"destination": "https://uplionsserve-hunger.vercel.app/hunger"
-		},
-		{
-			"source": "/hunger/:match*",
-			"destination": "https://uplionsserve-hunger.vercel.app/hunger/:match*"
-		},
+
 		{
 			"source": "/",
 			"destination": "https://uplionsserve.vercel.app/"
