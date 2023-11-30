@@ -17,12 +17,12 @@
 		},
 		{
 			"source": "/(dad|defenseagainstdiabetes)",
-			"destination": "https://uplionsserve-dad.vercel.app/defense-against-diabetes",
+			"destination": "https://uplionsserve.org/defense-against-diabetes",
 			"permanent": true
 		},
 		{
 			"source": "/(dad|defenseagainstdiabetes)/:match*",
-			"destination": "https://uplionsserve-dad.vercel.app/defense-against-diabetes/:match*",
+			"destination": "https://uplionsserve.org/defense-against-diabetes/:match*",
 			"permanent": true
 		}
 	],
