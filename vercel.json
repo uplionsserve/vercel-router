@@ -16,13 +16,13 @@
 			"permanent": true
 		},
 		{
-			"source": "/(dad|defenseagainstdiabetes)",
-			"destination": "https://uplionsserve.org/defense-against-diabetes",
+			"source": "/(dad|daa|defenseagainstdiabetes|defense-against-diabetes)",
+			"destination": "https://uplionsserve.org/diabetes-awareness-and-action",
 			"permanent": true
 		},
 		{
-			"source": "/(dad|defenseagainstdiabetes)/:match*",
-			"destination": "https://uplionsserve.org/defense-against-diabetes/:match*",
+			"source": "/(dad|daa|defenseagainstdiabetes|defense-against-diabetes)/:match*",
+			"destination": "https://uplionsserve.org/diabetes-awareness-and-action/:match*",
 			"permanent": true
 		},
 		{
@@ -46,12 +46,12 @@
 			"destination": "https://uplionsserve-cc.vercel.app/childhood-cancer/:match*"
 		},
 		{
-			"source": "/defense-against-diabetes",
-			"destination": "https://uplionsserve-dad.vercel.app/defense-against-diabetes"
+			"source": "/diabetes-awareness-and-action",
+			"destination": "https://uplionsserve-dad.vercel.app/diabetes-awareness-and-action"
 		},
 		{
-			"source": "/defense-against-diabetes/:match*",
-			"destination": "https://uplionsserve-dad.vercel.app/defense-against-diabetes/:match*"
+			"source": "/diabetes-awareness-and-action/:match*",
+			"destination": "https://uplionsserve-dad.vercel.app/diabetes-awareness-and-action/:match*"
 		},
 
 		{
