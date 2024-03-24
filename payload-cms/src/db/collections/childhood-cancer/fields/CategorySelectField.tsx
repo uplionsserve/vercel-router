@@ -1,6 +1,6 @@
 import * as React from "react"
 import { Field } from "payload/types"
-import { CcDataTag } from "payload/generated-types"
+import { CcDataCategory } from "payload/generated-types"
 import { PaginatedDocs } from "payload/database"
 import { SelectInput, useField } from "payload/components/forms"
 import { toKebabCase } from "@/utils/caseTransformers"
@@ -15,7 +15,7 @@ const CategorySelectComponent: React.FC<{ path: string }> = ({ path }) => {
 				const tagsRes = await fetch(
 					`${window.location.origin}/api/cc-data-categories?sort=name`
 				)
-				const tags: PaginatedDocs<CcDataTag> = await tagsRes.json()
+				const tags: PaginatedDocs<CcDataCategory> = await tagsRes.json()
 
 				const tagOptions = tags.docs.map((tag) => ({
 					label: tag.name,
