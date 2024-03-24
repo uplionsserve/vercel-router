@@ -1,5 +1,5 @@
 import { GlobalConfig } from "payload/types"
-import { triggerHungerRegeneration } from "../../helpers"
+import { triggerHungerRegeneration } from "@/utils/staticSiteRegenerators"
 
 const Home: GlobalConfig = {
 	slug: "hunger-pages-home",

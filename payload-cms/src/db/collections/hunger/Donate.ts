@@ -1,6 +1,6 @@
 import { GlobalConfig } from "payload/types"
 import { lexicalHTML } from "@payloadcms/richtext-lexical"
-import { triggerHungerRegeneration } from "../../helpers"
+import { triggerHungerRegeneration } from "@/utils/staticSiteRegenerators"
 
 const Donate: GlobalConfig = {
 	slug: "hunger-pages-donate",

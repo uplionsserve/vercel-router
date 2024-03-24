@@ -1,5 +1,5 @@
 import { CollectionConfig } from "payload/types"
-import { triggerHungerRegeneration } from "../../helpers"
+import { triggerHungerRegeneration } from "@/utils/staticSiteRegenerators"
 
 const Media: CollectionConfig = {
 	slug: "hunger-data-media",
@@ -20,7 +20,7 @@ const Media: CollectionConfig = {
 		},
 	],
 	upload: {
-		staticDir: process.env.MEDIA_DIR || undefined,
+		staticDir: `${process.env.MEDIA_DIR}/hunger`,
 		mimeTypes: ["image/*", "application/pdf"],
 		imageSizes: [
 			{

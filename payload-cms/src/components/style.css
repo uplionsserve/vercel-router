@@ -1,8 +1,26 @@
-.nav-icon {
+.icon-box {
+	display: flex !important;
+	align-items: center;
+	gap: 8px;
+}
+
+.icon-box img {
 	max-height: 20px;
 }
 
-.logo {
+.icon-box p {
+}
+
+.logo img {
 	max-height: 200px;
 	margin: auto;
+	padding-bottom: 12px;
+}
+
+.dev-text {
+	display: block;
+	margin: 0;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-transform: uppercase;
 }
