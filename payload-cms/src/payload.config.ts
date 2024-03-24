@@ -10,13 +10,19 @@ import { buildConfig } from "payload/config"
 
 /* App-wide */
 import { Icon, Logo } from "./components/Icon"
-import Users from "./collections/Users"
-import Keys from "./collections/Keys"
+import Users from "@/db/collections/administration/Users"
+import Keys from "@/db/collections/administration/Keys"
 
-import cc from "./collections/childhood-cancer/pages"
-import hunger from "./collections/hunger"
+/* Websites */
+import cc from "@/db/collections/childhood-cancer"
+import hunger from "@/db/collections/hunger"
 
 export default buildConfig({
+	// Database objects
+	collections: [Users, Keys, ...cc.collections, ...hunger.collections],
+	globals: [...cc.pages, ...hunger.pages],
+
+	// Payload Settings
 	serverURL: process.env.SERVER_URL,
 	admin: {
 		user: Users.slug,
@@ -28,7 +34,19 @@ export default buildConfig({
 		components: {
 			graphics: { Icon, Logo },
 		},
+		webpack: (config) => ({
+			...config,
+			resolve: {
+				...config.resolve,
+				alias: {
+					...config.resolve.alias,
+					"@": path.resolve(__dirname, "./"),
+				},
+			},
+		}),
 	},
+
+	// Database settings
 	db: postgresAdapter({
 		pool: {
 			connectionString:
@@ -36,8 +54,10 @@ export default buildConfig({
 					? process.env.DATABASE_URI_DEV
 					: process.env.DATABASE_URI_PROD,
 		},
+		migrationDir: "./src/db/migrations",
 	}),
 
+	// Rich Text Editor settings
 	editor: lexicalEditor({
 		features: ({ defaultFeatures }) => [
 			...defaultFeatures,
@@ -46,12 +66,10 @@ export default buildConfig({
 		],
 	}),
 
-	collections: [Users, Keys, ...hunger.collections],
-	globals: [...hunger.pages],
-
 	typescript: {
 		outputFile: path.resolve(__dirname, "payload-types.ts"),
 	},
+
 	graphQL: {
 		schemaOutputFile: path.resolve(__dirname, "generated-schema.graphql"),
 	},

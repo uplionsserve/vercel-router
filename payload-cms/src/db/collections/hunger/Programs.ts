@@ -1,7 +1,7 @@
 import { CollectionConfig } from "payload/types"
-import { toKebabCase } from "../helpers"
+import { toKebabCase } from "@/utils/caseTransformers"
 import { lexicalHTML } from "@payloadcms/richtext-lexical"
-import { triggerHungerRegeneration } from "../../helpers"
+import { triggerHungerRegeneration } from "@/utils/staticSiteRegenerators"
 
 const Programs: CollectionConfig = {
 	slug: "hunger-data-programs",

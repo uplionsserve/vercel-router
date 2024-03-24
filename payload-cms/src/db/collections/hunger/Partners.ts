@@ -1,5 +1,5 @@
 import { CollectionConfig } from "payload/types"
-import { triggerHungerRegeneration } from "../../helpers"
+import { triggerHungerRegeneration } from "@/utils/staticSiteRegenerators"
 
 const Programs: CollectionConfig = {
 	slug: "hunger-data-partners",

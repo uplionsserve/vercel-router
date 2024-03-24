@@ -1,5 +1,5 @@
 import { CollectionConfig } from "payload/types"
-import { isAdmin } from "./helpers"
+import { isAdmin } from "@/utils/authCheckers"
 
 const Users: CollectionConfig = {
 	slug: "users",

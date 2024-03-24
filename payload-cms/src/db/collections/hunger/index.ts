@@ -4,7 +4,7 @@ import Home from "./Home"
 import Partners from "./Partners"
 import Programs from "./Programs"
 import Donate from "./Donate"
-import { hasAccess, isAdmin } from "../helpers"
+import { hasAccess } from "@/utils/authCheckers"
 
 const HungerData = {
 	pages: [Home, About, Donate],
