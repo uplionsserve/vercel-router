@@ -16,11 +16,12 @@ HungerData.pages = HungerData.pages.map((page) => ({
 	admin: {
 		...page.admin,
 		hidden: ({ user }) => !hasAccess(user, "Hunger"),
-		hideAPIURL: true,
+		hideAPIURL: process.env.NODE_ENV === "production",
 	},
 	access: {
 		read: ({ req: { user } }) => hasAccess(user, "Hunger"),
 		update: ({ req: { user } }) => hasAccess(user, "Hunger"),
+		...page.access,
 	},
 }))
 
@@ -29,11 +30,12 @@ HungerData.collections = HungerData.collections.map((collection) => ({
 	admin: {
 		...collection.admin,
 		hidden: ({ user }) => !hasAccess(user, "Hunger"),
-		hideAPIURL: true,
+		hideAPIURL: process.env.NODE_ENV === "production",
 	},
 	access: {
 		read: ({ req: { user } }) => hasAccess(user, "Hunger"),
 		update: ({ req: { user } }) => hasAccess(user, "Hunger"),
+		...collection.access,
 	},
 }))
 
