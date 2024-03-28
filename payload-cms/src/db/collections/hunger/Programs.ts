@@ -15,7 +15,6 @@ const Programs: CollectionConfig = {
 		description:
 			"Programs that are offered or endorsed by the Hunger program displayed on the Home and Programs pages.",
 	},
-	defaultSort: "id",
 	fields: [
 		{
 			name: "logo_image",

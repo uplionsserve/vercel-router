@@ -5,6 +5,7 @@ import Heroes from "./collections/Heroes"
 import PageBanners from "./collections/PageBanners"
 import Newsletters from "./collections/Newsletters"
 import Tags from "./collections/Tags"
+import { CollectionAfterChangeHook } from "payload/types"
 
 const CancerData = {
 	pages: [],
@@ -25,9 +26,12 @@ CancerData.pages = CancerData.pages.map((page) => ({
 		update: ({ req: { user } }) => hasAccess(user, "Childhood Cancer"),
 		...page.access, // So individually specified access rules overwrite defaults
 	},
-	hooks: {
-		afterChange: [triggerChildhoodCancerRegeneration],
-	},
+	afterChange: [
+		({ doc }): CollectionAfterChangeHook => {
+			triggerChildhoodCancerRegeneration()
+			return doc
+		},
+	],
 }))
 
 CancerData.collections = CancerData.collections.map((collection) => ({
@@ -45,7 +49,12 @@ CancerData.collections = CancerData.collections.map((collection) => ({
 		...collection.access, // So individually specified access rules overwrite defaults
 	},
 	hooks: {
-		afterChange: [triggerChildhoodCancerRegeneration],
+		afterChange: [
+			({ doc }): CollectionAfterChangeHook => {
+				triggerChildhoodCancerRegeneration()
+				return doc
+			},
+		],
 		afterDelete: [triggerChildhoodCancerRegeneration],
 	},
 }))

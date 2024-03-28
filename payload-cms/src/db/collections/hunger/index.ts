@@ -1,10 +1,12 @@
+import { CollectionAfterChangeHook, GlobalAfterChangeHook } from "payload/types"
+import { hasAccess } from "@/utils/authCheckers"
+import { triggerHungerRegeneration } from "@/utils/staticSiteRegenerators"
 import Media from "./Media"
 import About from "./About"
 import Home from "./Home"
 import Partners from "./Partners"
 import Programs from "./Programs"
 import Donate from "./Donate"
-import { hasAccess } from "@/utils/authCheckers"
 
 const HungerData = {
 	pages: [Home, About, Donate],
@@ -23,6 +25,14 @@ HungerData.pages = HungerData.pages.map((page) => ({
 		update: ({ req: { user } }) => hasAccess(user, "Hunger"),
 		...page.access,
 	},
+	hooks: {
+		afterChange: [
+			({ doc }): GlobalAfterChangeHook => {
+				triggerHungerRegeneration()
+				return doc
+			},
+		],
+	},
 }))
 
 HungerData.collections = HungerData.collections.map((collection) => ({
@@ -36,6 +46,15 @@ HungerData.collections = HungerData.collections.map((collection) => ({
 		read: ({ req: { user } }) => hasAccess(user, "Hunger"),
 		update: ({ req: { user } }) => hasAccess(user, "Hunger"),
 		...collection.access,
+	},
+	hooks: {
+		afterChange: [
+			({ doc }): CollectionAfterChangeHook => {
+				triggerHungerRegeneration()
+				return doc
+			},
+		],
+		afterDelete: [triggerHungerRegeneration],
 	},
 }))
 
