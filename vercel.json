@@ -24,16 +24,6 @@
 			"source": "/(dad|daa|defenseagainstdiabetes|defense-against-diabetes)/:match*",
 			"destination": "https://uplionsserve.org/diabetes-awareness-and-action/:match*",
 			"permanent": true
-		},
-		{
-			"source": "/hunger",
-			"destination": "https://uplionsserve.org/hunger",
-			"permanent": false
-		},
-		{
-			"source": "/hunger/:match*",
-			"destination": "https://uplionsserve.org/hunger/:match*",
-			"permanent": false
 		}
 	],
 	"rewrites": [
