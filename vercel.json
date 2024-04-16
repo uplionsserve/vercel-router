@@ -26,13 +26,13 @@
 			"permanent": true
 		},
 		{
-			"source": "/hunger/",
-			"destination": "https://uplionsserve.org",
+			"source": "/hunger",
+			"destination": "https://uplionsserve.org/hunger",
 			"permanent": false
 		},
 		{
 			"source": "/hunger/:match*",
-			"destination": "https://uplionsserve.org",
+			"destination": "https://uplionsserve.org/hunger/:match*",
 			"permanent": false
 		}
 	],
@@ -53,7 +53,14 @@
 			"source": "/diabetes-awareness-and-action/:match*",
 			"destination": "https://uplionsserve-dad.vercel.app/diabetes-awareness-and-action/:match*"
 		},
-
+		{
+			"source": "/hunger",
+			"destination": "https://uplionsserve-hunger.vercel.app/hunger"
+		},
+		{
+			"source": "/hunger/:match*",
+			"destination": "https://uplionsserve-hunger.vercel.app/hunger/:match*"
+		},
 		{
 			"source": "/",
 			"destination": "https://uplionsserve.vercel.app/"
